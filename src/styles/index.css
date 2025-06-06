@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+@import "tailwindcss" important;
+@import "tw-animate-css";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-app: "Montserrat", sans-serif;
+  /* --font-app: "Roboto Mono", monospace; */
+  /* --font-app: "Poppins", sans-serif; */
+  /* --font-app: "Work Sans", sans-serif; */
+}
