@@ -43,8 +43,9 @@ const AppRoutes: React.FC = () => {
 		<div>
 			<Routes>
 				<Route path="*" element={<NotFoundPage />} />
-				<Route path={Path.root.index} element={<WelcomePage />} />
-
+				<Route element={<NavigationLayout />}>
+					<Route path={Path.root.index} element={<WelcomePage />} />
+				</Route>	
 				<Route
 					path={Path.login.index}
 					element={
