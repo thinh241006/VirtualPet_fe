@@ -2,8 +2,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Work+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter&display=swap");
 @import "tailwindcss" important;
 @import "tw-animate-css";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 @custom-variant dark (&:where(.dark, .dark *));
 
@@ -12,4 +17,14 @@
   /* --font-app: "Roboto Mono", monospace; */
   /* --font-app: "Poppins", sans-serif; */
   /* --font-app: "Work Sans", sans-serif; */
+}
+
+.font-inter {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  height: 20px;
+}
+
+nav.bg-nav {
+  background-color: #FFFAF4 !important;
 }
