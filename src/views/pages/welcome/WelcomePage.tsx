@@ -1,6 +1,7 @@
 import React from "react";
 import arrowIcon from '../../../assets/arrow.svg';
 import catIcon from '../../../assets/cat.svg'
+import searchButton from '../../../assets/searchButton.svg'
 
 const WelcomePage: React.FC = () => {
 	return (
@@ -43,36 +44,38 @@ const WelcomePage: React.FC = () => {
 			</div>
 
 			{/* Search Bar */}
-			<div className="relative max-w-2xl mx-auto mt-8 w-full bg-white">
-				<div className="flex items-center border border-[#0A0D120F] rounded-4xl overflow-hidden focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent shadow">
-					<input 
-						type="text"
-						placeholder="Tìm kiếm"
-						className="py-2 px-4 flex-grow focus:outline-none"
-					/>
+			<div className="relative max-w-2xl mx-auto mt-8 w-full bg-nav">
+				<div className="flex items-center gap-3">
+					<div className="flex-1 flex items-center bg-white border border-[#0A0D120F] rounded-4xl overflow-hidden shadow focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
+						<input 
+							type="text"
+							placeholder="Tìm kiếm"
+							className="py-2 px-4 flex-grow focus:outline-none"
+						/>
 
-					<div className="h-6 border-l border-[#F8CC85]"></div>
-									<div className="relative group">
-					<button className="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900">
-						<img src={catIcon} alt="cat icon" />
-						<span className="ml-2">Mèo</span>
-						<svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
-						</svg>
-					</button>
+						<div className="h-6 border-l border-[#F8CC85]"></div>
+										<div className="relative group">
+						<button className="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900">
+							<img src={catIcon} alt="cat icon" />
+							<span className="ml-2">Mèo</span>
+							<svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+							</svg>
+						</button>
 
-					<div className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
-						<div className="py-1">
-							<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mèo con</a>
-							<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mèo lớn</a>
-							<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mèo cảnh</a>
-							<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Mèo nhập</a>
+						<div className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
+							<div className="py-1">
+								<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Chó</a>
+							</div>
 						</div>
 					</div>
 				</div>
-				</div>
+				<button className="flex items-center">
+					<img src={searchButton} alt="search button" className="h-12 w-12 mt-2" />
+				</button>
 			</div>
 		</div>
+	</div>
 	);
 };
 
