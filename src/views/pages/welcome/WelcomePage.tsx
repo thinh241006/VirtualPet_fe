@@ -7,7 +7,7 @@ const WelcomePage: React.FC = () => {
 	return (
 		<div className="bg-[#FFFAF4]">
 			{/* Hero-img */}
-			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 gap-8 font-inter">
+			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 gap-50 font-inter w-full">
 				{/* Text Content (Left Side) */}
 				<div className="max-w-2xl space-y-6 text-gray-800">
 					<h1 className="text-4xl md:text-5xl font-bold leading-tight">
