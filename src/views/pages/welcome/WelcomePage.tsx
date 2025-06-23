@@ -7,9 +7,9 @@ const WelcomePage: React.FC = () => {
 	return (
 		<div className="bg-[#FFFAF4]">
 			{/* Hero-img */}
-			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 gap-50 font-inter w-full">
+			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 font-inter w-full">
 				{/* Text Content (Left Side) */}
-				<div className="max-w-2xl space-y-6 text-gray-800">
+				<div className="flex-1 max-w-2xl space-y-6 text-gray-800 lg:mr-12 xl:mr-24">
 					<h1 className="text-4xl md:text-5xl font-bold leading-tight">
 						Mang một người bạn về nhà ngay hôm nay
 					</h1>
@@ -36,7 +36,7 @@ const WelcomePage: React.FC = () => {
 				</div>
 
 				{/* Image Placeholder (Right Side) */}
-				<div className="w-full lg:w-1/2 flex justify-center">
+				<div className="flex-1 flex justify-center lg:justify-end mt-8 lg:mt-0">
 					<div className="bg-gray-200 rounded-xl w-full max-w-md h-80 lg:h-96 flex items-center justify-center text-gray-400">
 					[Pet Image Here]
 					</div>
