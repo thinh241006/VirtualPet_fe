@@ -2,6 +2,7 @@ import React from "react";
 import arrowIcon from '../../../assets/arrow.svg';
 import catIcon from '../../../assets/cat.svg'
 import searchButton from '../../../assets/searchButton.svg'
+import cat1 from '../../../assets/Rectangle 5.png'
 
 const pets = [
   {
@@ -9,7 +10,7 @@ const pets = [
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_buddy_image.jpg",
+    image: cat1,
   },
   {
     name: "Dulce",
@@ -71,11 +72,15 @@ type PetProps = {
 };
 
 const PetCard = ({ name, breed, age, location, image }: PetProps) => (
-  <div className="bg-white rounded-xl shadow p-4">
-    <img src={image} alt={name} className="w-full h-48 object-cover rounded-lg mb-4" />
-    <h2 className="text-lg font-semibold">{name}</h2>
-    <p className="text-gray-700">{breed} - {age}</p>
-    <p className="text-sm text-gray-500">{location}</p>
+  <div className="bg-white rounded-xl shadow">
+    <div className="w-full h-50% rounded-lg overflow-hidden">
+		<img src={image} alt={name} className="w-full h-full object-cover" />
+	</div>
+	<div className="px-4 pb-4">
+		<h2 className="text-lg font-semibold">{name}</h2>
+		<p className="text-gray-700">{breed} - {age}</p>
+		<p className="text-sm text-gray-500">{location}</p>
+	</div>
   </div>
 );
 
