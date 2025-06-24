@@ -1,14 +1,25 @@
-// tailwind.config.js
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
+    "./src/**/*.{js,ts,jsx,tsx}",
+    // Add other template paths as needed
   ],
   theme: {
     extend: {
       fontFamily: {
-        inter: ['Inter', 'sans-serif'], // Correctly defines 'inter' font family
+        montserrat: ['Montserrat', 'sans-serif'],
+        inter: ['Inter', 'sans-serif'],
+        // Add other fonts as needed
+      },
+      colors: {
+        cream: '#FFFAF4',
       },
     },
   },
-  plugins: [],
+  variants: {
+    extend: {},
+  },
+  plugins: [
+    require('@tailwindcss/forms'), // If using forms plugin
+    // Other plugins
+  ],
 }

@@ -87,7 +87,7 @@ const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 
 const WelcomePage: React.FC = () => {
 	return (
-		<div className="bg-[#FFFAF4] font-inter">
+		<div className="bg-[#FFFAF4] bg-custom-cream">
 			{/* Hero-img */}
 			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 w-full">
 				{/* Text Content (Left Side) */}
@@ -159,7 +159,7 @@ const WelcomePage: React.FC = () => {
 			</div>
 
 			{/* Pet Cards Grid */}
-			<div className="w-[80%]	mx-auto px-4">
+			<div className="w-[80%]	mx-auto px-4 mt-10">
 				<button className="bg-[#FCE7C7] py-2 px-4 rounded-2xl font-medium">Gợi ý cho bạn</button>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6">
 					{pets.map((pet, index) => (
