@@ -87,9 +87,9 @@ const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 
 const WelcomePage: React.FC = () => {
 	return (
-		<div className="bg-[#FFFAF4]">
+		<div className="bg-[#FFFAF4] font-inter">
 			{/* Hero-img */}
-			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 font-inter w-full">
+			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 w-full">
 				{/* Text Content (Left Side) */}
 				<div className="flex-1 max-w-2xl space-y-6 text-gray-800 lg:mr-12 xl:mr-24">
 					<h1 className="text-4xl md:text-5xl font-bold leading-tight">
@@ -126,7 +126,7 @@ const WelcomePage: React.FC = () => {
 			</div>
 
 			{/* Search Bar */}
-			<div className="relative max-w-2xl mx-auto mt-8 w-full bg-nav">
+			<div className="relative max-w-2xl mx-auto mt-8 w-full bg-nav font-medium">
 				<div className="flex items-center gap-3">
 					<div className="flex-1 flex items-center bg-white border border-[#0A0D120F] rounded-4xl overflow-hidden shadow focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
 						<input 
@@ -159,8 +159,9 @@ const WelcomePage: React.FC = () => {
 			</div>
 
 			{/* Pet Cards Grid */}
-			<div className="w-[80%]	mx-auto">
-				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-12">
+			<div className="w-[80%]	mx-auto px-4">
+				<button className="bg-[#FCE7C7] py-2 px-4 rounded-2xl font-medium">Gợi ý cho bạn</button>
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6">
 					{pets.map((pet, index) => (
 						<PetCard
 						key={index}
