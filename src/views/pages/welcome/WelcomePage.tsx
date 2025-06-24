@@ -3,6 +3,83 @@ import arrowIcon from '../../../assets/arrow.svg';
 import catIcon from '../../../assets/cat.svg'
 import searchButton from '../../../assets/searchButton.svg'
 
+const pets = [
+  {
+    name: "Buddy",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_buddy_image.jpg",
+  },
+  {
+    name: "Dulce",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_dulce_image.jpg",
+  },
+  {
+    name: "Nika",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_nika_image.jpg",
+  },
+  {
+    name: "Draco",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_draco_image.jpg",
+  },
+  {
+    name: "Firulais",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_firulais_image.jpg",
+  },
+  {
+    name: "Chuck",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_chuck_image.jpg",
+  },
+  {
+    name: "Hulk",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_hulk_image.jpg",
+  },
+  {
+    name: "Brandon",
+    breed: "Golden retriever",
+    age: "7 tháng",
+    location: "Cầu Giấy, Hà Nội",
+    image: "path_to_brandon_image.jpg",
+  },
+];
+
+type PetProps = {
+  name: string;
+  breed: string;
+  age: string;
+  location: string;
+  image: string;
+};
+
+const PetCard = ({ name, breed, age, location, image }: PetProps) => (
+  <div className="bg-white rounded-xl shadow p-4">
+    <img src={image} alt={name} className="w-full h-48 object-cover rounded-lg mb-4" />
+    <h2 className="text-lg font-semibold">{name}</h2>
+    <p className="text-gray-700">{breed} - {age}</p>
+    <p className="text-sm text-gray-500">{location}</p>
+  </div>
+);
+
+
 const WelcomePage: React.FC = () => {
 	return (
 		<div className="bg-[#FFFAF4]">
@@ -54,28 +131,44 @@ const WelcomePage: React.FC = () => {
 						/>
 
 						<div className="h-6 border-l border-[#F8CC85]"></div>
-										<div className="relative group">
-						<button className="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900">
-							<img src={catIcon} alt="cat icon" />
-							<span className="ml-2">Mèo</span>
-							<svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
-							</svg>
-						</button>
+						<div className="relative group">
+							<button className="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900">
+								<img src={catIcon} alt="cat icon" />
+								<span className="ml-2">Mèo</span>
+								<svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
+								</svg>
+							</button>
 
-						<div className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
-							<div className="py-1">
-								<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Chó</a>
+							<div className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
+								<div className="py-1">
+									<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Chó</a>
+								</div>
 							</div>
 						</div>
 					</div>
+					<button className="flex items-center">
+						<img src={searchButton} alt="search button" className="h-12 w-12 mt-2" />
+					</button>
 				</div>
-				<button className="flex items-center">
-					<img src={searchButton} alt="search button" className="h-12 w-12 mt-2" />
-				</button>
+			</div>
+
+			{/* Pet Cards Grid */}
+			<div className="w-[80%]	mx-auto">
+				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-6 py-12">
+					{pets.map((pet, index) => (
+						<PetCard
+						key={index}
+						name={pet.name}
+						breed={pet.breed}
+						age={pet.age}
+						location={pet.location}
+						image={pet.image}
+						/>
+					))}
+				</div>
 			</div>
 		</div>
-	</div>
 	);
 };
 
