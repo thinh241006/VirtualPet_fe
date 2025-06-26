@@ -173,6 +173,11 @@ const WelcomePage: React.FC = () => {
 						/>
 					))}
 				</div>
+				<div className="flex justify-center">
+					<button className="bg-gradient-to-r from-[#F59F16] to-[#F5B349] py-2 px-6 rounded-3xl text-black font-medium mt-5">
+						Xem tất cả
+					</button>
+				</div>
 			</div>
 		</div>
 	);
