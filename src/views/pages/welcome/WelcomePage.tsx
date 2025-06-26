@@ -2,7 +2,14 @@ import React from "react";
 import arrowIcon from '../../../assets/arrow.svg';
 import catIcon from '../../../assets/cat.svg'
 import searchButton from '../../../assets/searchButton.svg'
-import cat1 from '../../../assets/Rectangle 5.png'
+import cat1 from '../../../assets/cat1.png'
+import cat2 from '../../../assets/cat2.png'
+import cat3 from '../../../assets/cat3.png'
+import cat4 from '../../../assets/cat4.png'
+import cat5 from '../../../assets/cat5.png'
+import cat6 from '../../../assets/cat6.png'
+import cat7 from '../../../assets/cat7.png'
+import cat8 from '../../../assets/cat8.png'
 
 const pets = [
   {
@@ -17,49 +24,49 @@ const pets = [
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_dulce_image.jpg",
+    image: cat2,
   },
   {
     name: "Nika",
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_nika_image.jpg",
+    image: cat3,
   },
   {
     name: "Draco",
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_draco_image.jpg",
+    image: cat4,
   },
   {
     name: "Firulais",
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_firulais_image.jpg",
+    image: cat5,
   },
   {
     name: "Chuck",
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_chuck_image.jpg",
+    image: cat6,
   },
   {
     name: "Hulk",
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_hulk_image.jpg",
+    image: cat7,
   },
   {
     name: "Brandon",
     breed: "Golden retriever",
     age: "7 tháng",
     location: "Cầu Giấy, Hà Nội",
-    image: "path_to_brandon_image.jpg",
+    image: cat8,
   },
 ];
 
@@ -73,7 +80,7 @@ type PetProps = {
 
 const PetCard = ({ name, breed, age, location, image }: PetProps) => (
   <div className="bg-white rounded-xl shadow">
-    <div className="w-full h-50% rounded-lg overflow-hidden">
+    <div className="w-full h-50% rounded-t-2xl overflow-hidden">
 		<img src={image} alt={name} className="w-full h-full object-cover" />
 	</div>
 	<div className="px-4 pb-4">
@@ -176,6 +183,44 @@ const WelcomePage: React.FC = () => {
 				<div className="flex justify-center">
 					<button className="bg-gradient-to-r from-[#F59F16] to-[#F5B349] py-2 px-6 rounded-3xl text-black font-medium mt-5">
 						Xem tất cả
+					</button>
+				</div>
+			</div>
+
+			{/* banner */}
+			<div className="bg-white rounded-2xl p-8 shadow mx-[22px] max-w-[1150px] w-full md:mx-auto mt-8">
+				<h2 className="text-2xl font-bold mb-6 ml-4">Quy trình nhận nuôi</h2>
+				<div className="grid md:grid-cols-2 gap-4">
+					<div className="ml-4">
+						<h3 className="font-semibold">1. Tìm hiểu thú cưng</h3>
+						<p className="text-gray-700 mt-2">
+							Duyệt qua danh sách thú cưng theo sở thích và nhu cầu của bạn. <br />
+							Mỗi bé đều có thông tin rõ ràng về tính cách, tuổi, giống loài...
+							</p>
+					</div>
+					<div className="ml-4">
+						<h3 className="font-semibold">2. Gửi đơn nhận nuôi</h3>
+						<p className="text-gray-700 mt-2">
+							Xem hồ sơ chi tiết và gửi đơn đăng ký nhận nuôi chỉ trong vài phút.
+						</p>
+					</div>
+					<div className="ml-4">
+						<h3 className="font-semibold">3. Xác minh & liên hệ</h3>
+						<p className="text-gray-700 mt-2">
+							Chúng tôi sẽ xác nhận thông tin và hướng dẫn các bước tiếp theo. <br />
+							Bạn có thể đặt lịch gặp online tại bước này.
+						</p>
+					</div>
+					<div className="ml-4">
+						<h3 className="font-semibold">4. Hoàn tất & đưa thú cưng về nhà</h3>
+						<p className="text-gray-700 mt-2">
+							Ký cam kết nhận nuôi và chuẩn bị một mái ấm mới cho người bạn nhỏ.
+						</p>
+					</div>
+			</div>
+				<div className="mt-6 flex justify-center">
+					<button className="bg-white border border-gray-400 font-medium px-4 py-2 rounded-xl text-[#414651]">
+						Tìm hiểu thêm
 					</button>
 				</div>
 			</div>

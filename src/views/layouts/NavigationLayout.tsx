@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Outlet } from 'react-router-dom';
+import logo from '../../assets/logo.svg';
 
 const NavigationLayout: React.FC = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
@@ -11,9 +12,7 @@ const NavigationLayout: React.FC = () => {
 		<div className="max-w-7xl mx-auto flex items-center justify-between">
 			{/* Left: Logo + Links */}
 			<div className="flex items-center space-x-8">
-			<h1 className="text-2xl font-bold text-gray-800 font-inter pb-8">
-				Furever Home
-			</h1>
+				<img src={logo} alt="Furever Home Logo" className="h-9" />
 			<div className="hidden md:flex items-center space-x-6">
 				<button 
 				onClick={() => setShowSearchBox(!showSearchBox)}
