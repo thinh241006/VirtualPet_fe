@@ -218,7 +218,7 @@ const WelcomePage: React.FC = () => {
 						</p>
 					</div>
 			</div>
-				<div className="mt-6 flex justify-center">
+				<div className="mt-10 flex justify-center">
 					<button className="bg-white border border-gray-400 font-medium px-4 py-2 rounded-xl text-[#414651]">
 						Tìm hiểu thêm
 					</button>
