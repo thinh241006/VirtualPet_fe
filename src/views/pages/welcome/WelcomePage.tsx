@@ -11,11 +11,9 @@ import cat6 from '../../../assets/cat6.png'
 import cat7 from '../../../assets/cat7.png'
 import cat8 from '../../../assets/cat8.png'
 import {
-  FaHandPeace,
   FaLinkedin,
   FaFacebook,
   FaGithub,
-  FaPeace,
   FaDribbble
 } from 'react-icons/fa';
 import { SiX } from "react-icons/si";
