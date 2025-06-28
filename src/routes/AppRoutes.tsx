@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Path } from "@/configs/path";
@@ -10,6 +11,7 @@ import NavigationLayout from "@/layouts/NavigationLayout";
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
 import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
+import RegisterOptionsPage from "@/pages/auth/RegisterOptionsPage";
 
 interface PublicRouteProps {
 	children: React.ReactNode;
@@ -45,7 +47,7 @@ const AppRoutes: React.FC = () => {
 				<Route path="*" element={<NotFoundPage />} />
 				<Route element={<NavigationLayout />}>
 					<Route path={Path.root.index} element={<WelcomePage />} />
-				</Route>	
+				</Route>
 				<Route
 					path={Path.login.index}
 					element={
@@ -59,6 +61,14 @@ const AppRoutes: React.FC = () => {
 					element={
 						// <PublicRoute>
 							<RegisterPage />
+						// </PublicRoute>
+					}
+				/>
+				<Route
+					path={Path.register.options.index}
+					element={
+						// <PublicRoute>
+							<RegisterOptionsPage />
 						// </PublicRoute>
 					}
 				/>
