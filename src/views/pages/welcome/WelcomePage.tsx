@@ -10,14 +10,6 @@ import cat5 from '../../../assets/cat5.png'
 import cat6 from '../../../assets/cat6.png'
 import cat7 from '../../../assets/cat7.png'
 import cat8 from '../../../assets/cat8.png'
-import {
-  FaLinkedin,
-  FaFacebook,
-  FaGithub,
-  FaDribbble
-} from 'react-icons/fa';
-import { SiX } from "react-icons/si";
-import handIcon from '../../../assets/hand.svg'
 import Footer from '../../../components/Footer';
 
 
