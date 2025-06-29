@@ -7,6 +7,9 @@ export const Path = {
 	},
 	register: {
 		index: "/register",
+		options: {
+			index: "/register/options",
+		},
 	},
 	forgotPassword: {
 		index: "/forgot-password",
