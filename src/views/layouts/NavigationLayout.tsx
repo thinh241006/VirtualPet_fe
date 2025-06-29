@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, Link } from 'react-router-dom';
 import logo from '../../assets/logo.svg';
+import { Path } from '../../configs/path';
 
 const NavigationLayout: React.FC = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
@@ -12,7 +13,9 @@ const NavigationLayout: React.FC = () => {
 		<div className="max-w-7xl mx-auto flex items-center justify-between">
 			{/* Left: Logo + Links */}
 			<div className="flex items-center space-x-8">
-				<img src={logo} alt="Furever Home Logo" className="h-9" />
+				<Link to={Path.root.index}>
+					<img src={logo} alt="Furever Home Logo" className="h-9" />
+				</Link>
 			<div className="hidden md:flex items-center space-x-6">
 				<button 
 				onClick={() => setShowSearchBox(!showSearchBox)}
@@ -28,9 +31,9 @@ const NavigationLayout: React.FC = () => {
 
 			{/* Right: Auth */}
 			<div className="flex items-center space-x-4">
-			<a href="#" className="text-gray-600 font-inter">Log in</a>
-			<a
-				href="#"
+			<Link to={Path.login.index} className="text-gray-600 font-inter">Log in</Link>
+			<Link
+				to={Path.register.index}
 				className="text-black font-inter px-4 py-5 rounded-4xl shadow-sm flex items-center justify-center"
 				style={{
 					background: 'linear-gradient(90deg, #F5B349, #F7C26D)',
@@ -38,7 +41,7 @@ const NavigationLayout: React.FC = () => {
 				}}
 				>
 				Sign up
-			</a>
+			</Link>
 			</div>
 		</div>
 
@@ -64,9 +67,9 @@ const NavigationLayout: React.FC = () => {
 			Tìm kiếm
 			</button>
 			<div className="flex space-x-4">
-			<a href="#" className="text-gray-700 hover:text-primary">Log in</a>
-			<a
-				href="#"
+			<Link to={Path.login.index} className="text-gray-700 hover:text-primary">Log in</Link>
+			<Link
+				to={Path.register.index}
 				className="text-primary font-medium"
 				style={{
 				background: 'linear-gradient(90deg, #F5B349, #F7C26D)',
@@ -76,7 +79,7 @@ const NavigationLayout: React.FC = () => {
 				}}
 			>
 				Sign up
-			</a>
+			</Link>
 			</div>
 		</div>
 		</nav>
