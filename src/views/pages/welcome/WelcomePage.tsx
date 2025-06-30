@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect, useRef } from "react";
 import arrowIcon from '../../../assets/arrow.svg';
 import catIcon from '../../../assets/cat.svg'
 import searchButton from '../../../assets/searchButton.svg'
@@ -10,14 +10,7 @@ import cat5 from '../../../assets/cat5.png'
 import cat6 from '../../../assets/cat6.png'
 import cat7 from '../../../assets/cat7.png'
 import cat8 from '../../../assets/cat8.png'
-import {
-  FaLinkedin,
-  FaFacebook,
-  FaGithub,
-  FaDribbble
-} from 'react-icons/fa';
-import { SiX } from "react-icons/si";
-import handIcon from '../../../assets/hand.svg'
+import Footer from '../../../components/Footer';
 
 
 const pets = [
@@ -102,6 +95,31 @@ const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 
 
 const WelcomePage: React.FC = () => {
+	const [selectedPetType, setSelectedPetType] = useState("Mèo");
+	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+	const dropdownRef = useRef<HTMLDivElement>(null);
+
+	const petTypes = ["Mèo", "Chó"];
+
+	const handlePetTypeSelect = (petType: string) => {
+		setSelectedPetType(petType);
+		setIsDropdownOpen(false);
+	};
+
+	// Close dropdown when clicking outside
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (dropdownRef.current && !dropdownRef.current.contains(event.target as Node)) {
+				setIsDropdownOpen(false);
+			}
+		};
+
+		document.addEventListener('mousedown', handleClickOutside);
+		return () => {
+			document.removeEventListener('mousedown', handleClickOutside);
+		};
+	}, []);
+
 	return (
 		<div className="bg-[#FFFAF4] bg-custom-cream">
 			{/* Hero-img */}
@@ -144,7 +162,7 @@ const WelcomePage: React.FC = () => {
 			{/* Search Bar */}
 			<div className="relative max-w-2xl mx-auto mt-8 w-full bg-nav font-medium">
 				<div className="flex items-center gap-3">
-					<div className="flex-1 flex items-center bg-white border border-[#0A0D120F] rounded-4xl overflow-hidden shadow focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
+					<div className="flex-1 flex items-center bg-white border border-[#0A0D120F] rounded-4xl overflow-visible shadow focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
 						<input 
 							type="text"
 							placeholder="Tìm kiếm"
@@ -152,20 +170,38 @@ const WelcomePage: React.FC = () => {
 						/>
 
 						<div className="h-6 border-l border-[#F8CC85]"></div>
-						<div className="relative group">
-							<button className="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900">
+						<div className="relative overflow-visible" ref={dropdownRef}>
+							<button 
+								onClick={() => {
+									setIsDropdownOpen(!isDropdownOpen);
+								}}
+								className="flex items-center px-3 py-2 text-gray-700 hover:text-gray-900"
+							>
 								<img src={catIcon} alt="cat icon" />
-								<span className="ml-2">Mèo</span>
-								<svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<span className="ml-2">{selectedPetType}</span>
+								<svg className={`w-4 h-4 ml-1 transition-transform ${isDropdownOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"/>
 								</svg>
 							</button>
 
-							<div className="absolute right-0 mt-1 w-48 bg-white rounded-md shadow-lg hidden group-hover:block z-10">
-								<div className="py-1">
-									<a href="#" className="block px-4 py-2 text-gray-700 hover:bg-gray-100">Chó</a>
+							{/* Dropdown positioned relative to the button */}
+							{isDropdownOpen && (
+								<div className="absolute left-0 top-full mt-1 w-48 bg-white rounded-md shadow-lg z-50 border border-gray-200">
+									<div className="py-1">
+										{petTypes.map((petType) => (
+											<button
+												key={petType}
+												onClick={() => handlePetTypeSelect(petType)}
+												className={`block w-full text-left px-4 py-2 text-gray-700 hover:bg-gray-100 ${
+													selectedPetType === petType ? 'bg-gray-100 font-medium' : ''
+												}`}
+											>
+												{petType}
+											</button>
+										))}
+									</div>
 								</div>
-							</div>
+							)}
 						</div>
 					</div>
 					<button className="flex items-center">
@@ -235,79 +271,7 @@ const WelcomePage: React.FC = () => {
 			</div>
 
 			{/* Footer */}
-			<footer className="bg-white py-12 mt-20">
-			<div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
-				{/* Logo and Description */}
-				<div>
-				<h2 className="text-lg font-semibold mb-2">Furever Home</h2>
-				<p className="text-gray-600">
-					Chung tay tìm kiếm mái ấm cho động vật bị bỏ rơi
-				</p>
-				</div>
-
-				{/* Sản phẩm */}
-				<div>
-				<h3 className="text-sm font-semibold mb-2">Sản phẩm</h3>
-				<ul className="space-y-1 text-gray-600">
-					<li><a href="#">Tính năng</a></li>
-					<li><a href="#">Về chúng tôi</a></li>
-				</ul>
-				</div>
-
-				{/* Resources */}
-				<div>
-				<h3 className="text-sm font-semibold mb-2">Resources</h3>
-				<ul className="space-y-1 text-gray-600">
-					<li><a href="#">Blog</a></li>
-					<li><a href="#">Newsletter</a></li>
-					<li><a href="#">Events</a></li>
-				</ul>
-				</div>
-
-				{/* Cộng đồng */}
-				<div>
-				<h3 className="text-sm font-semibold mb-2">Cộng đồng</h3>
-				<ul className="space-y-1 text-gray-600">
-					<li><a href="#">Discord</a></li>
-					<li><a href="#">LinkedIn</a></li>
-					<li><a href="#">Facebook</a></li>
-				</ul>
-				</div>
-
-				{/* Pháp lý */}
-				<div>
-				<h3 className="text-sm font-semibold mb-2">Pháp lý</h3>
-				<ul className="space-y-1 text-gray-600">
-					<li><a href="#">Điều khoản</a></li>
-					<li><a href="#">Bảo mật</a></li>
-					<li><a href="#">Cookies</a></li>
-				</ul>
-				</div>
-			</div>
-
-			{/* Bottom Section */}
-			<div className="max-w-7xl mx-auto mt-15 px-4 mt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-				<p className="text-sm text-gray-500">
-				© 2077 Untitled UI. All rights reserved.
-				</p>
-				<div className="flex space-x-4 text-gray-500 text-xl">
-				<SiX className="hover:text-gray-700 cursor-pointer" />
-				<FaLinkedin className="hover:text-gray-700 cursor-pointer" />
-				<FaFacebook className="hover:text-gray-700 cursor-pointer" />
-				<FaGithub className="hover:text-gray-700 cursor-pointer" />
-				<div className="hover:text-gray-700 cursor-pointer">
-					<a href='#' className="hover:text-gray-700 cursor-pointer">
-						<img 
-							src={handIcon}
-							alt="Hand Icon"
-							className="h-5 hover:opacity-75 transition-opacity cursor-pointer"
-							/>
-						</a>
-				</div>
-				<FaDribbble className="hover:text-gray-700 cursor-pointer" />
-				</div>
-			</div>
-			</footer>
+			<Footer />
 		</div>
 	);
 };

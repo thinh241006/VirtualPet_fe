@@ -1,8 +1,8 @@
-
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Path } from "../../../configs/path";
 
 interface LoginFormData {
   email: string;
@@ -29,8 +29,10 @@ const LoginPage: React.FC = () => {
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
         {/* Header */}
         <div className="flex items-center mb-8">
-          <ArrowLeft className="w-6 h-6 text-orange-500 mr-3" />
-          <span className="text-orange-500 font-medium">Quay lại trang chủ</span>
+          <Link to={Path.root.index} className="flex items-center text-orange-500 hover:text-orange-600 transition-colors">
+            <ArrowLeft className="w-6 h-6 mr-3" />
+            <span className="font-medium">Quay lại trang chủ</span>
+          </Link>
         </div>
 
         {/* Title */}
@@ -107,12 +109,12 @@ const LoginPage: React.FC = () => {
               />
               <span className="ml-2 text-sm text-gray-700">Ghi nhớ đăng nhập</span>
             </label>
-            <button
-              type="button"
+            <Link
+              to={Path.forgotPassword.index}
               className="text-sm text-orange-500 hover:text-orange-600 font-medium"
             >
               Quên mật khẩu ?
-            </button>
+            </Link>
           </div>
 
           {/* Login Button */}
