@@ -141,14 +141,10 @@ const WelcomePage: React.FC = () => {
 			<div className="w-[80%]	mx-auto px-4 mt-10">
 				<button className="bg-[#FCE7C7] py-2 px-4 rounded-2xl font-medium">Gợi ý cho bạn</button>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6">
-					{pets.map((pet, index) => (
+					{pets.map((pet) => (
 						<PetCard
-						key={index}
-						name={pet.name}
-						breed={pet.breed}
-						age={pet.age}
-						location={pet.location}
-						image={pet.image}
+							key={pet.id}
+							{...pet}
 						/>
 					))}
 				</div>
