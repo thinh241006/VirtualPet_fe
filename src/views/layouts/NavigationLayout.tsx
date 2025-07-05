@@ -19,19 +19,19 @@ const NavigationLayout: React.FC = () => {
 			<div className="hidden md:flex items-center space-x-6">
 				<button 
 				onClick={() => setShowSearchBox(!showSearchBox)}
-				className="text-black font-inter"
+				className="text-gray-600 font-inter"
 				>
 				Tìm kiếm
 				</button>
-				<a href="#" className="text-black font-inter">Tìm kiếm phù hợp nhất</a>
-				<a href="#" className="text-black font-inter">Quy trình nhận nuôi</a>
-				<a href="#" className="text-black font-inter">FAQs</a>
+				<a href="#" className="text-gray-600 font-inter">Tìm kiếm phù hợp nhất</a>
+				<a href="#" className="text-gray-600 font-inter">Quy trình nhận nuôi</a>
+				<a href="#" className="text-gray-600 font-inter">FAQs</a>
 			</div>
 			</div>
 
 			{/* Right: Auth */}
 			<div className="flex items-center space-x-4">
-			<Link to={Path.login.index} className="text-black font-inter">Log in</Link>
+			<Link to={Path.login.index} className="text-gray-600 font-inter">Log in</Link>
 			<Link
 				to={Path.register.index}
 				className="text-black font-inter px-4 py-5 rounded-4xl shadow-sm flex items-center justify-center"
