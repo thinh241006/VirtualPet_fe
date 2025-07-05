@@ -12,6 +12,7 @@ import DashboardPage from "@/pages/dashboard/DashboardPage";
 import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
 import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
 import RegisterOptionsPage from "@/pages/auth/RegisterOptionsPage";
+import PetDetailPage from '@/pages/pet/PetDetailPage';
 
 interface PublicRouteProps {
 	children: React.ReactNode;
@@ -47,6 +48,8 @@ const AppRoutes: React.FC = () => {
 				<Route path="*" element={<NotFoundPage />} />
 				<Route element={<NavigationLayout />}>
 					<Route path={Path.root.index} element={<WelcomePage />} />
+					{/* Pet detail route */}
+					<Route path="/pet/:id" element={<PetDetailPage />} />
 				</Route>
 				<Route
 					path={Path.login.index}

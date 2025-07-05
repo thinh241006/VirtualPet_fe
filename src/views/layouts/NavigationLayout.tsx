@@ -9,7 +9,7 @@ const NavigationLayout: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation Bar */}
-      <nav className="shadow-md py-6 px-6 bg-[#FFFAF4]">
+      <nav className="shadow-md py-6 px-6" style={{ backgroundColor: '#FFFAF4' }}>
 		<div className="max-w-7xl mx-auto flex items-center justify-between">
 			{/* Left: Logo + Links */}
 			<div className="flex items-center space-x-8">
