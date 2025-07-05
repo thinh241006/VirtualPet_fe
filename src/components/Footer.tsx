@@ -10,12 +10,12 @@ import handIcon from '../assets/hand.svg';
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-white py-12 mt-20">
+    <footer className="py-12 mt-20" style={{ backgroundColor: '#FFFAF4' }}>
       <div className="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-5 gap-8">
         {/* Logo and Description */}
         <div>
-          <h2 className="text-lg font-semibold mb-2">Furever Home</h2>
-          <p className="text-gray-600">
+          <h2 className="text-lg font-semibold mb-2 text-black">Furever Home</h2>
+          <p className="text-black">
             Chung tay tìm kiếm mái ấm cho động vật bị bỏ rơi
           </p>
         </div>
@@ -62,10 +62,10 @@ const Footer: React.FC = () => {
 
       {/* Bottom Section */}
       <div className="max-w-7xl mx-auto mt-15 px-4 mt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-        <p className="text-sm text-gray-500">
+        <p className="text-sm text-black">
           © 2077 Untitled UI. All rights reserved.
         </p>
-        <div className="flex space-x-4 text-gray-500 text-xl">
+        <div className="flex space-x-4 text-black text-xl">
           <SiX className="hover:text-gray-700 cursor-pointer" />
           <FaLinkedin className="hover:text-gray-700 cursor-pointer" />
           <FaFacebook className="hover:text-gray-700 cursor-pointer" />
