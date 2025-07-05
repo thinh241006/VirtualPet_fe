@@ -5,6 +5,7 @@ import searchButton from '../../../assets/searchButton.svg'
 import Footer from '../../../components/Footer';
 import { pets } from '../../../components/PetMockData';
 import type { PetProps } from '../../../components/PetMockData';
+import { Link } from 'react-router-dom';
 
 
 const PetCard = ({ name, breed, age, location, image }: PetProps) => (
@@ -142,10 +143,9 @@ const WelcomePage: React.FC = () => {
 				<button className="bg-[#FCE7C7] py-2 px-4 rounded-2xl font-medium">Gợi ý cho bạn</button>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6">
 					{pets.map((pet) => (
-						<PetCard
-							key={pet.id}
-							{...pet}
-						/>
+						<Link key={pet.id} to={`/pet/${pet.id}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+							<PetCard {...pet} />
+						</Link>
 					))}
 				</div>
 				<div className="flex justify-center">
