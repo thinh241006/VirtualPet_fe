@@ -2,22 +2,29 @@ import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { pets } from '../../../components/PetMockData';
 import Footer from '../../../components/Footer';
-import arrowIcon from '../../../assets/arrow.svg';
+import heartIcon from '../../../assets/heart.svg';
+import medalIcon from '../../../assets/medal.svg';
+import smallHeartIcon from '../../../assets/smallHeart.svg';
+import vaccineIcon from '../../../assets/vaccine.svg';
+import adoptIcon from '../../../assets/adopt.svg';
 
 const LocationIcon = () => (
   <svg className="inline-block w-4 h-4 mr-1 text-gray-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 11.5a2.5 2.5 0 100-5 2.5 2.5 0 000 5z"/><path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7-7.5 11-7.5 11s-7.5-4-7.5-11a7.5 7.5 0 1115 0z"/></svg>
 );
 const HeartIcon = () => (
-  <svg className="w-6 h-6 text-yellow-400" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M4.318 6.318a4.5 4.5 0 016.364 0L12 7.636l1.318-1.318a4.5 4.5 0 116.364 6.364L12 21.682l-7.682-7.682a4.5 4.5 0 010-6.364z"/></svg>
+  <img src={heartIcon} alt="Heart" className="w-6 h-6" />
 );
 const VaccineIcon = () => (
-  <svg className="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M17 9V7a5 5 0 00-10 0v2M5 20h14M7 20v-4a2 2 0 012-2h6a2 2 0 012 2v4"/></svg>
+  <img src={vaccineIcon} alt="Vaccine" className="w-4 h-4 mr-2" />
 );
 const NeuterIcon = () => (
-  <svg className="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path strokeLinecap="round" strokeLinejoin="round" d="M15 9l-6 6M9 9l6 6"/></svg>
+  <img src={medalIcon} alt="Neuter" className="w-4 h-4 mr-2" />
 );
 const HealthIcon = () => (
-  <svg className="w-5 h-5 text-gray-400 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3"/><circle cx="12" cy="12" r="10"/></svg>
+  <img src={smallHeartIcon} alt="Health" className="w-4 h-4 mr-2" />
+);
+const AdoptIcon = () => (
+  <img src={adoptIcon} alt="Adopt" className="w-5 h-5 mr-2" />
 );
 const PawIcon = () => (
   <svg className="w-5 h-5 inline-block mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24"><circle cx="5.5" cy="10.5" r="1.5"/><circle cx="18.5" cy="10.5" r="1.5"/><circle cx="12" cy="7.5" r="2"/><ellipse cx="7.5" cy="16.5" rx="2" ry="3"/><ellipse cx="16.5" cy="16.5" rx="2" ry="3"/></svg>
@@ -41,8 +48,8 @@ const PetDetailPage: React.FC = () => {
   const color = 'Vàng đồng';
   const health = [
     { label: 'Tình trạng tiêm chủng', value: 'Đầy đủ', icon: <VaccineIcon /> },
-    { label: 'Tình trạng triệt sản', value: 'Đã triệt sản', icon: <NeuterIcon /> },
-    { label: 'Tình trạng sức khỏe', value: 'Tốt', icon: <HealthIcon /> },
+    { label: 'Tình trạng triệt sản', value: 'Đã triệt sản', icon: <HealthIcon /> },
+    { label: 'Tình trạng sức khỏe', value: 'Tốt', icon: <NeuterIcon /> },
   ];
   const traits = ['Phù hợp với trẻ nhỏ', 'Đã được đào tạo', 'Thân thiện', 'Năng động'];
 
@@ -79,7 +86,7 @@ const PetDetailPage: React.FC = () => {
           <div className="bg-white rounded-2xl shadow-lg p-8 mb-6">
             <div className="flex items-start justify-between mb-2">
               <div>
-                <h1 className="text-2xl font-bold mb-1">{pet.name}</h1>
+                <h1 className="text-2xl font-medium mb-1">{pet.name}</h1>
                 <div className="flex items-center text-gray-500 text-sm">
                   <LocationIcon />
                   {pet.location}
@@ -135,7 +142,7 @@ const PetDetailPage: React.FC = () => {
             </div>
             <div className="flex flex-col gap-3 mt-6">
               <button className="w-full bg-gradient-to-r from-[#F59F16] to-[#F5B349] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition flex items-center justify-center text-base">
-                <PawIcon />Nhận nuôi {pet.name}
+                <AdoptIcon />Nhận nuôi {pet.name}
               </button>
               <button className="w-full border-2 border-[#F59F16] text-[#F59F16] py-3 rounded-xl font-semibold hover:bg-[#F59F16] hover:text-white transition flex items-center justify-center text-base">
                 <InfoIcon />Tìm hiểu quy trình
