@@ -17,6 +17,9 @@ export const Path = {
 	resetPassword: {
 		index: "/reset-password",
 	},
+	search: {
+		index: "/search",
+	},
 	user: {
 		index: "/",
 		outlets: {

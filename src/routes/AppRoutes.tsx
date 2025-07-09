@@ -12,7 +12,8 @@ import DashboardPage from "@/pages/dashboard/DashboardPage";
 import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
 import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
 import RegisterOptionsPage from "@/pages/auth/RegisterOptionsPage";
-import PetDetailPage from '@/pages/pet/PetDetailPage';
+import PetDetailPage from "@/pages/pet/PetDetailPage";
+import SearchPage from "@/pages/search/SearchPage";
 
 interface PublicRouteProps {
 	children: React.ReactNode;
@@ -48,6 +49,8 @@ const AppRoutes: React.FC = () => {
 				<Route path="*" element={<NotFoundPage />} />
 				<Route element={<NavigationLayout />}>
 					<Route path={Path.root.index} element={<WelcomePage />} />
+					{/* Search page route */}
+					<Route path={Path.search.index} element={<SearchPage />} />
 					{/* Pet detail route */}
 					<Route path="/pet/:id" element={<PetDetailPage />} />
 				</Route>
@@ -55,7 +58,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.login.index}
 					element={
 						// <PublicRoute>
-							<LoginPage />
+						<LoginPage />
 						// </PublicRoute>
 					}
 				/>
@@ -63,7 +66,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.register.index}
 					element={
 						// <PublicRoute>
-							<RegisterPage />
+						<RegisterPage />
 						// </PublicRoute>
 					}
 				/>
@@ -71,7 +74,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.register.options.index}
 					element={
 						// <PublicRoute>
-							<RegisterOptionsPage />
+						<RegisterOptionsPage />
 						// </PublicRoute>
 					}
 				/>
@@ -79,7 +82,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.forgotPassword.index}
 					element={
 						// <PublicRoute>
-							<ForgotPasswordPage />
+						<ForgotPasswordPage />
 						// </PublicRoute>
 					}
 				/>
@@ -87,7 +90,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.resetPassword.index}
 					element={
 						// <PublicRoute>
-							<ResetPasswordPage />
+						<ResetPasswordPage />
 						// </PublicRoute>
 					}
 				/>
@@ -97,7 +100,7 @@ const AppRoutes: React.FC = () => {
 						path={Path.user.outlets.dashboard}
 						element={
 							// <ProtectedRoute>
-								<DashboardPage />
+							<DashboardPage />
 							// </ProtectedRoute>
 						}
 					/>
@@ -105,7 +108,7 @@ const AppRoutes: React.FC = () => {
 						path={Path.user.outlets.profile}
 						element={
 							// <ProtectedRoute>
-								<ProfilePage />
+							<ProfilePage />
 							// </ProtectedRoute>
 						}
 					/>
