@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link } from "react-router-dom";
 import catIcon from "../assets/cat.svg";
 import searchButton from "../assets/searchButton.svg";
 
@@ -89,13 +90,13 @@ const SearchBar: React.FC = () => {
 						)}
 					</div>
 				</div>
-				<button className="flex items-center">
+				<Link to="/search/search-nothing" className="flex items-center">
 					<img
 						src={searchButton}
 						alt="search button"
 						className="h-12 w-12 mt-2"
 					/>
-				</button>
+				</Link>
 			</div>
 		</div>
 	);

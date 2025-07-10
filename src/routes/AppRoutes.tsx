@@ -14,6 +14,7 @@ import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
 import RegisterOptionsPage from "@/pages/auth/RegisterOptionsPage";
 import PetDetailPage from "@/pages/pet/PetDetailPage";
 import SearchPage from "@/pages/search/SearchPage";
+import SearchNothing from "@/pages/search/SearchNothing";
 
 interface PublicRouteProps {
 	children: React.ReactNode;
@@ -51,6 +52,11 @@ const AppRoutes: React.FC = () => {
 					<Route path={Path.root.index} element={<WelcomePage />} />
 					{/* Search page route */}
 					<Route path={Path.search.index} element={<SearchPage />} />
+
+					<Route path="search/search-nothing" element={<SearchNothing />} />
+
+					{/* Search nothing page route */}
+
 					{/* Pet detail route */}
 					<Route path="/pet/:id" element={<PetDetailPage />} />
 				</Route>

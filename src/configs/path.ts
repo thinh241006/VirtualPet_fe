@@ -19,6 +19,7 @@ export const Path = {
 	},
 	search: {
 		index: "/search",
+		option: { index: "/search/search-nothing" },
 	},
 	user: {
 		index: "/",
