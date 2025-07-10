@@ -49,13 +49,14 @@ const AppRoutes: React.FC = () => {
 			<Routes>
 				<Route path="*" element={<NotFoundPage />} />
 				<Route element={<NavigationLayout />}>
+					{/* Welcome page route */}
 					<Route path={Path.root.index} element={<WelcomePage />} />
+
 					{/* Search page route */}
 					<Route path={Path.search.index} element={<SearchPage />} />
 
-					<Route path="search/search-nothing" element={<SearchNothing />} />
-
 					{/* Search nothing page route */}
+					<Route path="search/search-nothing" element={<SearchNothing />} />
 
 					{/* Pet detail route */}
 					<Route path="/pet/:id" element={<PetDetailPage />} />
