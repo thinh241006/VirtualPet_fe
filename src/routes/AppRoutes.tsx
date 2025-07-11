@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
 import { Navigate, Route, Routes } from "react-router-dom";
 import { Path } from "@/configs/path";
@@ -10,6 +11,10 @@ import NavigationLayout from "@/layouts/NavigationLayout";
 import DashboardPage from "@/pages/dashboard/DashboardPage";
 import ForgotPasswordPage from "@/pages/auth/ForgotPasswordPage";
 import ResetPasswordPage from "@/pages/auth/ResetPasswordPage";
+import RegisterOptionsPage from "@/pages/auth/RegisterOptionsPage";
+import PetDetailPage from "@/pages/pet/PetDetailPage";
+import SearchPage from "@/pages/search/SearchPage";
+import SearchNothing from "@/pages/search/SearchNothing";
 
 interface PublicRouteProps {
 	children: React.ReactNode;
@@ -44,13 +49,23 @@ const AppRoutes: React.FC = () => {
 			<Routes>
 				<Route path="*" element={<NotFoundPage />} />
 				<Route element={<NavigationLayout />}>
+					{/* Welcome page route */}
 					<Route path={Path.root.index} element={<WelcomePage />} />
-				</Route>	
+
+					{/* Search page route */}
+					<Route path={Path.search.index} element={<SearchPage />} />
+
+					{/* Search nothing page route */}
+					<Route path="search/search-nothing" element={<SearchNothing />} />
+
+					{/* Pet detail route */}
+					<Route path="/pet/:id" element={<PetDetailPage />} />
+				</Route>
 				<Route
 					path={Path.login.index}
 					element={
 						// <PublicRoute>
-							<LoginPage />
+						<LoginPage />
 						// </PublicRoute>
 					}
 				/>
@@ -58,7 +73,15 @@ const AppRoutes: React.FC = () => {
 					path={Path.register.index}
 					element={
 						// <PublicRoute>
-							<RegisterPage />
+						<RegisterPage />
+						// </PublicRoute>
+					}
+				/>
+				<Route
+					path={Path.register.options.index}
+					element={
+						// <PublicRoute>
+						<RegisterOptionsPage />
 						// </PublicRoute>
 					}
 				/>
@@ -66,7 +89,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.forgotPassword.index}
 					element={
 						// <PublicRoute>
-							<ForgotPasswordPage />
+						<ForgotPasswordPage />
 						// </PublicRoute>
 					}
 				/>
@@ -74,7 +97,7 @@ const AppRoutes: React.FC = () => {
 					path={Path.resetPassword.index}
 					element={
 						// <PublicRoute>
-							<ResetPasswordPage />
+						<ResetPasswordPage />
 						// </PublicRoute>
 					}
 				/>
@@ -84,7 +107,7 @@ const AppRoutes: React.FC = () => {
 						path={Path.user.outlets.dashboard}
 						element={
 							// <ProtectedRoute>
-								<DashboardPage />
+							<DashboardPage />
 							// </ProtectedRoute>
 						}
 					/>
@@ -92,7 +115,7 @@ const AppRoutes: React.FC = () => {
 						path={Path.user.outlets.profile}
 						element={
 							// <ProtectedRoute>
-								<ProfilePage />
+							<ProfilePage />
 							// </ProtectedRoute>
 						}
 					/>

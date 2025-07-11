@@ -7,12 +7,19 @@ export const Path = {
 	},
 	register: {
 		index: "/register",
+		options: {
+			index: "/register/options",
+		},
 	},
 	forgotPassword: {
 		index: "/forgot-password",
 	},
 	resetPassword: {
 		index: "/reset-password",
+	},
+	search: {
+		index: "/search",
+		option: { index: "/search/search-nothing" },
 	},
 	user: {
 		index: "/",
