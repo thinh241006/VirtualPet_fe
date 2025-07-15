@@ -35,7 +35,7 @@ const NavigationLayout: React.FC = () => {
 						</div>
 					</div>
 
-					{/* Right: Auth */}
+					{/* Right: Auth + Profile */}
 					<div className="flex items-center space-x-4">
 						<Link to={Path.login.index} className="text-gray-600 font-inter">
 							Log in
@@ -50,6 +50,11 @@ const NavigationLayout: React.FC = () => {
 						>
 							Sign up
 						</Link>
+        <Link to={Path.user.outlets.profile} className="ml-2">
+          <div className="w-10 h-10 rounded-full bg-gray-200 flex items-center justify-center text-2xl">
+            <span role="img" aria-label="user">👤</span>
+          </div>
+        </Link>
 					</div>
 				</div>
 
