@@ -1,10 +1,11 @@
 import React, { useState } from "react";
 import { FaPen, FaUser, FaHeart, FaFileAlt, FaCode } from "react-icons/fa";
 import Footer from "@/components/Footer";
-import profileIcon from "@/assets/profile.svg";
-import heartIcon from "@/assets/heart.svg";
-import documentIcon from "@/assets/document.svg";
-import personIcon from "@/assets/person.svg";
+import ProfileIcon from '@/assets/profile.svg';
+import HeartIcon from '@/assets/heart.svg';
+import DocumentIcon from '@/assets/document.svg';
+import PersonIcon from '@/assets/person.svg';
+import Heart2Icon from '@/assets/heart2.svg';
 
 const tabs = [
   { label: "Thông tin tài khoản", active: true },
@@ -48,10 +49,10 @@ const ProfilePage: React.FC = () => {
                 }`}
                 disabled={idx === 0}
               >
-                {idx === 0 && <img src={personIcon} alt="profile" className="w-5 h-5" />}
-                {idx === 1 && <img src={heartIcon} alt="heart" className="w-5 h-5" />}
-                {idx === 2 && <img src={documentIcon} alt="document" className="w-5 h-5" />}
-                {idx === 3 && <img src={profileIcon} alt="person" className="w-5 h-5" />}
+                {idx === 0 && <img src={PersonIcon} alt="profile" className="w-5 h-5" style={{ filter: 'invert(27%) sepia(7%) saturate(1167%) hue-rotate(200deg) brightness(97%) contrast(90%)' }} />}
+                {idx === 1 && <img src={Heart2Icon} alt="heart" className="w-5 h-5" style={{ filter: 'invert(27%) sepia(7%) saturate(1167%) hue-rotate(200deg) brightness(97%) contrast(90%)' }} />}
+                {idx === 2 && <img src={DocumentIcon} alt="document" className="w-5 h-5" style={{ filter: 'invert(27%) sepia(7%) saturate(1167%) hue-rotate(200deg) brightness(97%) contrast(90%)' }} />}
+                {idx === 3 && <img src={ProfileIcon} alt="person" className="w-5 h-5" style={{ filter: 'invert(27%) sepia(7%) saturate(1167%) hue-rotate(200deg) brightness(97%) contrast(90%)' }} />}
                 {tab.label}
               </button>
             ))}
