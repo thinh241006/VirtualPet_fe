@@ -19,7 +19,8 @@ export const Path = {
 	},
 	search: {
 		index: "/search",
-		option: { index: "/search/search-nothing" },
+    option: { index: "/search/search-nothing" },
+    personalized: { index: "/search/personalized" },
 	},
 	user: {
 		index: "/",

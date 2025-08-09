@@ -23,9 +23,9 @@ const NavigationLayout: React.FC = () => {
 							<Link to="/search" className="text-gray-600 font-inter">
 								Tìm kiếm
 							</Link>
-							<a href="#" className="text-gray-600 font-inter">
-								Tìm kiếm phù hợp nhất
-							</a>
+						<Link to={Path.search.personalized.index} className="text-gray-600 font-inter">
+							Cá nhân hóa tìm kiếm
+						</Link>
 							<a href="#" className="text-gray-600 font-inter">
 								Quy trình nhận nuôi
 							</a>
