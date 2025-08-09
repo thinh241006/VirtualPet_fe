@@ -6,6 +6,34 @@ import { Path } from "../../configs/path";
 const NavigationLayout: React.FC = () => {
   const [showSearchBox, setShowSearchBox] = useState(false);
 
+	return (
+		<div className="min-h-screen flex flex-col">
+			{/* Navigation Bar */}
+			<nav
+				className="shadow-md py-6 px-6"
+				style={{ backgroundColor: "#FFFAF4" }}
+			>
+				<div className="max-w-7xl mx-auto flex items-center justify-between">
+					{/* Left: Logo + Links */}
+					<div className="flex items-center space-x-8">
+						<Link to={Path.root.index}>
+							<img src={logo} alt="Furever Home Logo" className="h-9" />
+						</Link>
+						<div className="hidden md:flex items-center space-x-6">
+							<Link to="/search" className="text-gray-600 font-inter">
+								Tìm kiếm
+							</Link>
+						<Link to={Path.search.personalized.index} className="text-gray-600 font-inter">
+							Cá nhân hóa tìm kiếm
+						</Link>
+							<a href="#" className="text-gray-600 font-inter">
+								Quy trình nhận nuôi
+							</a>
+							<a href="#" className="text-gray-600 font-inter">
+								FAQs
+							</a>
+						</div>
+					</div>
   return (
     <div className="min-h-screen flex flex-col">
       {/* Navigation Bar */}
