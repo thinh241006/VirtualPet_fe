@@ -5,6 +5,7 @@ import { pets } from "../../../components/PetMockData";
 import type { PetProps } from "../../../components/PetMockData";
 import { Link } from "react-router-dom";
 import SearchBar from "@/components/SearchBar";
+import { Path } from "../../../configs/path";
 
 const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 	<div className="bg-white rounded-xl shadow">
@@ -38,12 +39,10 @@ const WelcomePage: React.FC = () => {
 						nhận nuôi ngay hôm nay.
 					</p>
 
-					<div className="flex flex-wrap gap-10">
-						<div className="flex items-center">
-							<button className="text-white bg-gradient-to-r from-[#101828] to-[#535862] rounded-4xl px-6 py-3">
-								Cá nhân hóa tìm kiếm
-							</button>
-						</div>
+						<div className="flex flex-wrap gap-10">
+							<div className="flex items-center">
+								<Link to={Path.search.personalized.index} className="text-white bg-gradient-to-r from-[#101828] to-[#535862] rounded-4xl px-6 py-3">Cá nhân hóa tìm kiếm</Link>
+							</div>
 						<div className="flex items-center">
 							<span className="">
 								Quy trình nhận nuôi

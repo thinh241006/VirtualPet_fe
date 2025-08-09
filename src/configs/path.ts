@@ -2,6 +2,13 @@ export const Path = {
 	root: {
 		index: "/",
 	},
+    search: {
+        index: "/search",
+        option: { index: "/search/search-nothing" },
+        personalized: {
+            index: "/search/personalized",
+        },
+    },
 	login: {
 		index: "/login",
 	},
@@ -16,10 +23,6 @@ export const Path = {
 	},
 	resetPassword: {
 		index: "/reset-password",
-	},
-	search: {
-		index: "/search",
-		option: { index: "/search/search-nothing" },
 	},
 	user: {
 		index: "/",
