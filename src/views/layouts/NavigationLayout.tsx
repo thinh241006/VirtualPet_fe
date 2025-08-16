@@ -20,17 +20,11 @@ const NavigationLayout: React.FC = () => {
 							<img src={logo} alt="Furever Home Logo" className="h-9" />
 						</Link>
 						<div className="hidden md:flex items-center space-x-6">
-							<Link to="/search" className="text-gray-600 font-inter">
-								Tìm kiếm
+							<Link to={Path.search.personalized.index} className="text-gray-600 font-inter">
+								Cá nhân hóa tìm kiếm
 							</Link>
-						<Link to={Path.search.personalized.index} className="text-gray-600 font-inter">
-							Cá nhân hóa tìm kiếm
-						</Link>
 							<a href="#" className="text-gray-600 font-inter">
 								Quy trình nhận nuôi
-							</a>
-							<a href="#" className="text-gray-600 font-inter">
-								FAQs
 							</a>
 						</div>
 					</div>

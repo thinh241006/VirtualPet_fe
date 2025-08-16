@@ -24,7 +24,7 @@ const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 
 const WelcomePage: React.FC = () => {
 	return (
-		<div className="bg-[#FFFAF4] bg-custom-cream">
+		<div className="bg-white bg-custom-cream">
 			{/* Hero-img */}
 			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 w-full">
 				{/* Text Content (Left Side) */}

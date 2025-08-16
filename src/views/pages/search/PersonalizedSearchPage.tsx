@@ -17,8 +17,8 @@ const QUESTIONS: Question[] = [
   },
   {
     key: "experience",
-    label: "Tôi đã có kinh nghiệm nuôi",
-    options: ["chó", "mèo", "loài khác", "không loài nào"],
+    label: "Thú cưng tôi đã từng nuôi",
+    options: ["chó", "mèo", "loài khác", "không có"],
   },
   {
     key: "time",
@@ -167,7 +167,7 @@ const PersonalizedSearchPage: React.FC = () => {
               }}
               className="bg-[#F5B349] hover:bg-[#f1a025] text-black font-semibold px-5 py-2 rounded-lg"
             >
-              Lưu
+              Thú cưng phù hợp
             </button>
           </div>
         )}
