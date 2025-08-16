@@ -1,10 +1,11 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React from "react";
-import { Navigate, Route, Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Path } from "@/configs/path";
 import ProfilePage from "@/pages/profile/ProfilePage";
 import NotFoundPage from "@/pages/notfound/NotFoundPage";
 import WelcomePage from "@/pages/welcome/WelcomePage";
+import PersonalizedSearchPage from "@/pages/search/PersonalizedSearchPage";
 import LoginPage from "@/pages/auth/LoginPage";
 import RegisterPage from "@/pages/auth/RegisterPage";
 import NavigationLayout from "@/layouts/NavigationLayout";
@@ -17,13 +18,7 @@ import SearchPage from "@/pages/search/SearchPage";
 import SearchNothing from "@/pages/search/SearchNothing";
 import PersonalizedSearchPage from "@/pages/search/PersonalizedSearchPage";
 
-interface PublicRouteProps {
-	children: React.ReactNode;
-}
-
-interface ProtectedRouteProps {
-	children: React.ReactNode;
-}
+// Interfaces for route guards can be reintroduced when enabling auth-protected routes
 
 // const PublicRoute: React.FC<PublicRouteProps> = ({ children }) => {
 // 	const isAuthenticated = AuthService.getCurrentUser();
@@ -60,6 +55,9 @@ const AppRoutes: React.FC = () => {
 					<Route path="search/search-nothing" element={<SearchNothing />} />
 
 					{/* Personalized Search page route */}
+					<Route path={Path.search.personalized.index} element={<PersonalizedSearchPage />} />
+
+					{/* Personalized search */}
 					<Route path={Path.search.personalized.index} element={<PersonalizedSearchPage />} />
 
 					{/* Pet detail route */}
