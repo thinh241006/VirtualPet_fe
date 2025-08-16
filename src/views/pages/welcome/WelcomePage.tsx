@@ -1,12 +1,12 @@
 import React from "react";
 import arrowIcon from "../../../assets/arrow.svg";
+import heroImage from "../../../assets/hero-img.png";
 import Footer from "../../../components/Footer";
 import { pets } from "../../../components/PetMockData";
 import type { PetProps } from "../../../components/PetMockData";
 import { Link } from "react-router-dom";
-import { Path } from "@/configs/path";
-import SearchBar from "@/components/SearchBar";
 import { Path } from "../../../configs/path";
+import SearchBar from "@/components/SearchBar";
 
 const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 	<div className="bg-white rounded-xl shadow">
@@ -25,48 +25,65 @@ const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 
 const WelcomePage: React.FC = () => {
 	return (
-		<div className="bg-[#FFFAF4] bg-custom-cream">
-			{/* Hero-img */}
-			<div className="min-h-[500px] bg-gradient-to-r from-[#F5B349] to-white flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 w-full">
+		<div className="bg-white bg-custom-cream">
+			{/* Hero Section */}
+			<div className="min-h-[400px] bg-[#fff6ea] flex flex-col lg:flex-row items-center justify-between px-6 py-12 md:px-12 lg:px-24 w-full">
 				{/* Text Content (Left Side) */}
-				<div className="flex-1 max-w-2xl space-y-6 text-gray-800 lg:mr-12 xl:mr-24">
-					<h1 className="text-4xl md:text-5xl font-bold leading-tight">
-						Mang một người bạn về nhà ngay hôm nay
+				<div className="flex-1 max-w-2xl space-y-6 text-black lg:mr-16 xl:mr-20">
+					<h1 className="text-4xl md:text-4xl font-bold leading-tight text-black">
+						Bạn muốn nhận nuôi thú cưng?
 					</h1>
 
-					<p className="text-lg md:text-xl font-normal">
-						Hàng trăm thú cưng đang chờ một mái ấm và vòng tay yêu thương. Bạn
-						có thể là người thay đổi cuộc đời của chúng – bắt đầu hành trình
-						nhận nuôi ngay hôm nay.
+					<p className="text-xl md:text-2xl font-normal text-black leading-relaxed">
+						Tìm kiếm thủ công theo địa điểm & loài, hoặc dùng tính năng cá nhân hóa để được gợi ý thú cưng phù hợp nhất trong 30 giây.
 					</p>
 
-					<div className="flex flex-wrap gap-10">
-						<div className="flex items-center">
-						<Link to={Path.search.personalized.index} className="text-white bg-gradient-to-r from-[#101828] to-[#535862] rounded-4xl px-6 py-3">
+					{/* Search Bar */}
+					<div className="flex items-center bg-white rounded-full shadow-md p-1 w-full max-w-2xl">
+						<input
+							type="text"
+							placeholder="Nhập địa điểm"
+							className="flex-1 px-6 py-4 rounded-full border-none focus:outline-none focus:ring-0 text-gray-700 text-base"
+						/>
+						<div className="relative mx-1">
+							<select className="px-6 py-4 rounded-full border-none focus:outline-none focus:ring-0 text-gray-700 appearance-none pr-10 bg-transparent text-base">
+								<option value="">Loài</option>
+								<option value="dog">Chó</option>
+								<option value="cat">Mèo</option>
+								<option value="other">Khác</option>
+							</select>
+							<div className="absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none">
+								<svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+							</svg>
+							</div>
+						</div>
+						<button className="bg-black hover:bg-gray-800 text-white p-4 rounded-full transition-colors">
+							<svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+							</svg>
+						</button>
+					</div>
+
+					{/* Action Buttons */}
+					<div className="flex flex-wrap gap-8">
+						<Link to={Path.search.personalized.index} className="text-white bg-black hover:bg-gray-800 rounded-full px-8 py-4 font-medium transition-colors">
 							Cá nhân hóa tìm kiếm
 						</Link>
-						</div>
-
-						<div className="flex flex-wrap gap-10">
-							<div className="flex items-center">
-								<Link to={Path.search.personalized.index} className="text-white bg-gradient-to-r from-[#101828] to-[#535862] rounded-4xl px-6 py-3">Cá nhân hóa tìm kiếm</Link>
-							</div>
-						<div className="flex items-center">
-							<span className="">
-								Quy trình nhận nuôi
-								<a href="#" className="inline-flex ml-3">
-									<img src={arrowIcon} alt="arrow Icon" />
-								</a>
-							</span>
-						</div>
+						<a href="#" className="text-black hover:text-gray-700 inline-flex items-center gap-3 transition-colors font-medium">
+							<span>Quy trình nhận nuôi</span>
+							<img src={arrowIcon} alt="arrow Icon" className="w-5 h-5" />
+						</a>
 					</div>
 				</div>
 
-				{/* Image Placeholder (Right Side) */}
+				{/* Hero Image (Right Side) */}
 				<div className="flex-1 flex justify-center lg:justify-end mt-8 lg:mt-0">
-					<div className="bg-gray-200 rounded-xl w-full max-w-md h-80 lg:h-96 flex items-center justify-center text-gray-400">
-						[Pet Image Here]
-					</div>
+					<img 
+						src={heroImage} 
+						alt="Pet adoption - person kissing dog" 
+						className="w-full max-w-2xl h-80 lg:h-[350px] object-cover rounded-xl"
+					/>
 				</div>
 			</div>
 
