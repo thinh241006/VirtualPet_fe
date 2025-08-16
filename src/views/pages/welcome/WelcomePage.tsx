@@ -87,14 +87,18 @@ const WelcomePage: React.FC = () => {
 				</div>
 			</div>
 
-			{/* Search Bar */}
-			<SearchBar />
 
 			{/* Pet Cards Grid */}
-			<div className="w-[80%]	mx-auto px-4 mt-10">
-				<button className="bg-[#FCE7C7] py-2 px-4 rounded-2xl font-medium">
-					Gợi ý cho bạn
-				</button>
+			<div className="w-[80%]	mx-auto px-4 mt-20">
+				<div className="flex justify-between items-center mb-2">
+					<button className="border-2 border-[#FCE7C7] bg-white py-2 px-4 rounded-3xl font-medium">
+						Gợi ý cho bạn
+					</button>
+					<button className="text-[#F59F16] hover:text-[#f1a025] font-medium inline-flex items-center gap-2 transition-colors">
+						<span>Xem tất cả</span>
+						<img src={arrowIcon} alt="arrow Icon" className="w-4 h-4" style={{ filter: 'brightness(0) saturate(100%) invert(80%) sepia(20%) saturate(1500%) hue-rotate(359deg) brightness(90%) contrast(110%)' }} />
+					</button>
+				</div>
 				<div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 py-6">
 					{pets.map((pet) => (
 						<Link
