@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { Outlet, Link } from "react-router-dom";
 import logo from "../../assets/logo.svg";
 import { Path } from "../../configs/path";
