@@ -44,23 +44,23 @@ const FilterDropdown: React.FC<FilterDropdownProps> = ({ label, options }) => (
 
 const FilterSidebar: React.FC = () => {
 	const filterOptions: { [key: string]: string[] } = {
-		Giống: ["Tất cả", "Golden Retriever", "Siamese", "Ragdoll", "Tabby"],
-		Tuổi: ["Tất cả", "Dưới 1 năm", "1-3 năm", "Trên 3 năm"],
-		"Giới tính": ["Tất cả", "Đực", "Cái"],
-		"Kích thước": ["Tất cả", "Nhỏ", "Vừa", "Lớn"],
-		Lông: ["Tất cả", "Ngắn", "Dài"],
+		Breed: ["All", "Golden Retriever", "Siamese", "Ragdoll", "Tabby"],
+		Age: ["All", "Under 1 year", "1-3 years", "Over 3 years"],
+		Gender: ["All", "Male", "Female"],
+		Size: ["All", "Small", "Medium", "Large"],
+		Coat: ["All", "Short", "Long"],
 	};
 	return (
 		<aside className="flex-1 w-full lg:w-1/4">
 			<div className="p-6 rounded-lg">
-				<h2 className="text-lg font-bold text-gray-800 mb-4">Bộ lọc</h2>
+				<h2 className="text-lg font-bold text-gray-800 mb-4">Filters</h2>
 				<div className="space-y-6">
 					{Object.entries(filterOptions).map(([label, options]) => (
 						<FilterDropdown key={label} label={label} options={options} />
 					))}
 				</div>
 				<button className="mt-8 w-full bg-gray-800 text-white font-bold py-3 rounded-lg hover:bg-gray-700 transition duration-300">
-					Áp dụng
+					Apply
 				</button>
 			</div>
 		</aside>

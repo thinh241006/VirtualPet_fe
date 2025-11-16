@@ -16,16 +16,16 @@ const Footer: React.FC = () => {
         <div>
           <h2 className="text-lg font-semibold mb-2 text-black">Furever Home</h2>
           <p className="text-gray-600">
-            Chung tay tìm kiếm mái ấm cho động vật bị bỏ rơi
+            Together finding homes for abandoned animals
           </p>
         </div>
 
-        {/* Sản phẩm */}
+        {/* Product */}
         <div>
-          <h3 className="text-sm font-semibold mb-2">Sản phẩm</h3>
+          <h3 className="text-sm font-semibold mb-2">Product</h3>
           <ul className="space-y-1 text-gray-600">
-            <li><a href="#">Tính năng</a></li>
-            <li><a href="#">Về chúng tôi</a></li>
+            <li><a href="#">Features</a></li>
+            <li><a href="#">About Us</a></li>
           </ul>
         </div>
 
@@ -39,9 +39,9 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Cộng đồng */}
+        {/* Community */}
         <div>
-          <h3 className="text-sm font-semibold mb-2">Cộng đồng</h3>
+          <h3 className="text-sm font-semibold mb-2">Community</h3>
           <ul className="space-y-1 text-gray-600">
             <li><a href="#">Discord</a></li>
             <li><a href="#">LinkedIn</a></li>
@@ -49,12 +49,12 @@ const Footer: React.FC = () => {
           </ul>
         </div>
 
-        {/* Pháp lý */}
+        {/* Legal */}
         <div>
-          <h3 className="text-sm font-semibold mb-2">Pháp lý</h3>
+          <h3 className="text-sm font-semibold mb-2">Legal</h3>
           <ul className="space-y-1 text-gray-600">
-            <li><a href="#">Điều khoản</a></li>
-            <li><a href="#">Bảo mật</a></li>
+            <li><a href="#">Terms</a></li>
+            <li><a href="#">Privacy</a></li>
             <li><a href="#">Cookies</a></li>
           </ul>
         </div>

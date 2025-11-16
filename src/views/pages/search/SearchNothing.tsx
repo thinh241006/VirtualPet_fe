@@ -22,8 +22,8 @@ const pets: Pet[] = [
 		id: 1,
 		name: "Buddy",
 		breed: "Golden Retriever",
-		age: "7 tháng",
-		location: "Cầu Giấy, Hà Nội",
+		age: "7 months",
+		location: "Cau Giay, Hanoi",
 		imageUrl:
 			"https://images.unsplash.com/photo-1598300042247-d088f8ab3a91?q=80&w=256&h=256&fit=crop",
 	},
@@ -31,8 +31,8 @@ const pets: Pet[] = [
 		id: 2,
 		name: "Lucy",
 		breed: "Siamese",
-		age: "1 năm",
-		location: "Cầu Giấy, Hà Nội",
+		age: "1 year",
+		location: "Cau Giay, Hanoi",
 		imageUrl:
 			"https://images.unsplash.com/photo-1574158622682-e40e6984100d?q=80&w=256&h=256&fit=crop",
 	},
@@ -40,8 +40,8 @@ const pets: Pet[] = [
 		id: 3,
 		name: "Max",
 		breed: "Black Cat",
-		age: "2 năm",
-		location: "Cầu Giấy, Hà Nội",
+		age: "2 years",
+		location: "Cau Giay, Hanoi",
 		imageUrl:
 			"https://images.unsplash.com/photo-1516371248853-4e4425245647?q=80&w=256&h=256&fit=crop",
 	},
@@ -49,8 +49,8 @@ const pets: Pet[] = [
 		id: 4,
 		name: "Bella",
 		breed: "Calico",
-		age: "5 tháng",
-		location: "Cầu Giấy, Hà Nội",
+		age: "5 months",
+		location: "Cau Giay, Hanoi",
 		imageUrl:
 			"https://images.unsplash.com/photo-1596854407944-bf87f6fdd49e?q=80&w=256&h=256&fit=crop",
 	},
@@ -58,8 +58,8 @@ const pets: Pet[] = [
 		id: 5,
 		name: "Charlie",
 		breed: "Tonkinese",
-		age: "1.5 năm",
-		location: "Cầu Giấy, Hà Nội",
+		age: "1.5 years",
+		location: "Cau Giay, Hanoi",
 		imageUrl:
 			"https://images.unsplash.com/photo-1548802673-380ab8ebc7b7?q=80&w=256&h=256&fit=crop",
 	},
@@ -67,8 +67,8 @@ const pets: Pet[] = [
 		id: 6,
 		name: "Daisy",
 		breed: "Ragdoll",
-		age: "3 năm",
-		location: "Cầu Giấy, Hà Nội",
+		age: "3 years",
+		location: "Cau Giay, Hanoi",
 		imageUrl:
 			"https://images.unsplash.com/photo-1526336024174-e58f5cdd8e13?q=80&w=256&h=256&fit=crop",
 	},
@@ -107,28 +107,26 @@ const SearchNothing: React.FC = () => {
 					{/* Filter SideBar */}
 					<FilterSidebar />
 					<div className="w-full lg:w-3/4">
-						{/* Notthing Found par */}
+						{/* Nothing Found part */}
 						<div className="bg-white rounded-lg shadow-sm p-8 text-center">
 							<h2 className="text-2xl font-bold text-gray-800 mb-2">
-								Không tìm thấy thú cưng phù hợp
+								No suitable pets found
 							</h2>
 							<p className="text-gray-600">
-								Hiện tại không có thú cưng nào phù hợp với bộ lọc mà bạn chọn.
+								Currently, there are no pets that match your selected filters.
 							</p>
 							<p className="text-gray-600">
-								Thử điều chỉnh bộ lọc hoặc tham khảo những thú cưng có tương
-								đồng nhất với bộ lọc bên dưới.
+								Try adjusting your filters or check out similar pets below.
 							</p>
 						</div>
 
 						{/* Pets Grid */}
 						<div className="mt-8">
 							<h3 className="text-xl font-bold text-gray-800 mb-4">
-								Các thú cưng cùng khu vực
+								Pets in the same area
 							</h3>
 							<p className="text-gray-600 mb-6">
-								Những bạn nhỏ khác cũng đang chờ được nhận nuôi tại Cầu Giấy, Hà
-								Nội
+								Other furry friends are also waiting to be adopted in Cau Giay, Hanoi
 							</p>
 							<div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-6">
 								{pets.map((pet) => (

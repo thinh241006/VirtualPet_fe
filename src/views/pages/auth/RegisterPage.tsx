@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useForm } from "react-hook-form";
 import { ArrowLeft, Eye, EyeOff } from "lucide-react";
 import { Link } from "react-router-dom";
+import { Path } from "../../../configs/path";
 
 interface RegisterFormData {
   email: string;
@@ -24,7 +25,7 @@ const RegisterPage: React.FC = () => {
   const onSubmit = async (data: RegisterFormData) => {
     await new Promise(resolve => setTimeout(resolve, 1000));
     console.log("Register data:", data);
-    alert("Đăng ký thành công!");
+    alert("Registration successful!");
   };
 
   return (
@@ -32,13 +33,15 @@ const RegisterPage: React.FC = () => {
       <div className="w-full max-w-md p-6 bg-white rounded-lg shadow-md">
         {/* Header */}
         <div className="flex items-center mb-8">
-          <ArrowLeft className="w-6 h-6 text-orange-500 mr-3" />
-          <span className="text-orange-500 font-medium">Quay lại trang chủ</span>
+          <Link to={Path.root.index} className="flex items-center text-orange-500 hover:text-orange-600 transition-colors">
+            <ArrowLeft className="w-6 h-6 text-orange-500 mr-3" />
+            <span className="text-orange-500 font-medium">Back to Home</span>
+          </Link>
         </div>
 
         {/* Title */}
         <h1 className="text-2xl font-bold text-gray-900 mb-8">
-          Đăng ký để nhận nuôi ngay
+          Sign up to Adopt
         </h1>
 
         {/* Form */}
@@ -50,15 +53,15 @@ const RegisterPage: React.FC = () => {
             </label>
             <input
               type="email"
-              placeholder="olivia@untitledui.com"
+              placeholder="your@email.com"
               className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors ${
                 errors.email ? 'border-red-500' : 'border-gray-300'
               }`}
               {...register("email", {
-                required: "Email là bắt buộc",
+                required: "Email is required",
                 pattern: {
                   value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                  message: "Email không hợp lệ"
+                  message: "Invalid email address"
                 }
               })}
             />
@@ -70,20 +73,20 @@ const RegisterPage: React.FC = () => {
           {/* Password Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Mật khẩu
+              Password
             </label>
             <div className="relative">
               <input
                 type={showPassword ? "text" : "password"}
-                placeholder="********"
+                placeholder="••••••••"
                 className={`w-full px-4 py-3 pr-12 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors ${
                   errors.password ? 'border-red-500' : 'border-gray-300'
                 }`}
                 {...register("password", {
-                  required: "Mật khẩu là bắt buộc",
+                  required: "Password is required",
                   minLength: {
                     value: 6,
-                    message: "Mật khẩu phải có ít nhất 6 ký tự"
+                    message: "Password must be at least 6 characters"
                   }
                 })}
               />
@@ -103,18 +106,18 @@ const RegisterPage: React.FC = () => {
           {/* Confirm Password Field */}
           <div>
             <label className="block text-sm font-medium text-gray-700 mb-2">
-              Nhập lại mật khẩu
+              Confirm Password
             </label>
             <div className="relative">
               <input
                 type={showConfirmPassword ? "text" : "password"}
-                placeholder="********"
+                placeholder="••••••••"
                 className={`w-full px-4 py-3 pr-12 border rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-orange-500 outline-none transition-colors ${
                   errors.confirmPassword ? 'border-red-500' : 'border-gray-300'
                 }`}
                 {...register("confirmPassword", {
-                  required: "Vui lòng xác nhận mật khẩu",
-                  validate: (value) => value === password || "Mật khẩu không khớp"
+                  required: "Please confirm your password",
+                  validate: (value) => value === password || "Passwords do not match"
                 })}
               />
               <button
@@ -136,7 +139,7 @@ const RegisterPage: React.FC = () => {
             disabled={isSubmitting}
             className="w-full bg-orange-500 text-white py-3 px-4 rounded-lg font-medium hover:bg-orange-600 focus:ring-2 focus:ring-orange-500 focus:ring-offset-2 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isSubmitting ? "Đang đăng ký..." : "Đăng ký"}
+            {isSubmitting ? "Creating account..." : "Sign Up"}
           </button>
 
           {/* Divider */}
@@ -145,7 +148,7 @@ const RegisterPage: React.FC = () => {
               <div className="w-full border-t border-gray-300" />
             </div>
             <div className="relative flex justify-center text-sm">
-              <span className="px-2 bg-gray-50 text-gray-500">Lựa chọn khác</span>
+              <span className="px-2 bg-gray-50 text-gray-500">Or</span>
             </div>
           </div>
 
@@ -160,18 +163,17 @@ const RegisterPage: React.FC = () => {
               <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
               <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
             </svg>
-            Đăng nhập với Google
+            Sign up with Google
           </button>
 
           {/* Login Link */}
           <p className="text-center text-sm text-gray-600">
-            Đã có tài khoản?{" "}
+            Already have an account?{" "}
             <button
               type="button"
               className="text-orange-500 font-medium hover:text-orange-600"
             >
-              {/* Đăng nhập */}
-							<Link to="/login">Đăng nhập</Link>
+              <Link to="/login">Sign In</Link>
             </button>
           </p>
         </form>

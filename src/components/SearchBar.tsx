@@ -4,11 +4,11 @@ import catIcon from "../assets/cat.svg";
 import searchButton from "../assets/searchButton.svg";
 
 const SearchBar: React.FC = () => {
-	const [selectedPetType, setSelectedPetType] = useState("Mèo");
+	const [selectedPetType, setSelectedPetType] = useState("Cat");
 	const [isDropdownOpen, setIsDropdownOpen] = useState(false);
 	const dropdownRef = useRef<HTMLDivElement>(null);
 
-	const petTypes = ["Mèo", "Chó"];
+	const petTypes = ["Cat", "Dog"];
 
 	const handlePetTypeSelect = (petType: string) => {
 		setSelectedPetType(petType);
@@ -37,7 +37,7 @@ const SearchBar: React.FC = () => {
 				<div className="flex-1 flex items-center bg-white border border-[#0A0D120F] rounded-4xl overflow-visible shadow focus-within:ring-2 focus-within:ring-blue-500 focus-within:border-transparent">
 					<input
 						type="text"
-						placeholder="Tìm kiếm"
+						placeholder="Search"
 						className="py-2 px-4 flex-grow focus:outline-none"
 					/>
 

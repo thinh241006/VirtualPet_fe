@@ -63,14 +63,14 @@ const PetDetailPage: React.FC = () => {
   }
 
   // Placeholder data for demo
-  const gender = 'Đực';
-  const color = 'Vàng đồng';
+  const gender = 'Male';
+  const color = 'Golden';
   const health = [
-    { label: 'Tình trạng tiêm chủng', value: 'Đầy đủ', icon: <VaccineIcon /> },
-    { label: 'Tình trạng triệt sản', value: 'Đã triệt sản', icon: <HealthIcon /> },
-    { label: 'Tình trạng sức khỏe', value: 'Tốt', icon: <NeuterIcon /> },
+    { label: 'Vaccination Status', value: 'Complete', icon: <VaccineIcon /> },
+    { label: 'Neutering Status', value: 'Neutered', icon: <HealthIcon /> },
+    { label: 'Health Status', value: 'Good', icon: <NeuterIcon /> },
   ];
-  const traits = ['Phù hợp với trẻ nhỏ', 'Đã được đào tạo', 'Thân thiện', 'Năng động'];
+  const traits = ['Good with children', 'Trained', 'Friendly', 'Energetic'];
 
   return (
     <div className="bg-[#FFFAF4] min-h-screen flex flex-col">
@@ -83,7 +83,7 @@ const PetDetailPage: React.FC = () => {
           <svg className="w-6 h-6 mr-2  text-[#F5B349]" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" d="M19 12H5M12 19l-7-7 7-7" />
           </svg>
-          Quay lại danh sách
+          Back to List
         </button>
       </div>
 
@@ -116,25 +116,25 @@ const PetDetailPage: React.FC = () => {
             <hr className="mb-6 opacity-10" />
             <div className="grid grid-cols-2 gap-y-4 gap-x-6 text-sm mb-4">
               <div>
-                <span className="text-gray-500">Giống</span><br />
+                <span className="text-gray-500">Breed</span><br />
                 <div className="pt-2">
                   <span className="font-bold mt-5">{pet.breed}</span>
                 </div>
               </div>
               <div>
-                <span className="text-gray-500">Tuổi</span><br />
+                <span className="text-gray-500">Age</span><br />
                 <div className="pt-2">
-                  <span className="font-bold mt-5">2 năm</span>
+                  <span className="font-bold mt-5">2 years</span>
                 </div>
               </div>
               <div>
-                <span className="text-gray-500">Màu sắc</span><br />
+                <span className="text-gray-500">Color</span><br />
                 <div className="pt-2">
                   <span className="font-bold mt-5">{color}</span>
                 </div>
               </div>
               <div>
-                <span className="text-gray-500">Giới tính</span><br />
+                <span className="text-gray-500">Gender</span><br />
                 <div className="pt-2">
                   <span className="font-bold mt-5">{gender}</span>
                 </div>
@@ -152,7 +152,7 @@ const PetDetailPage: React.FC = () => {
               ))}
             </div>
             <div className="mb-4">
-              <span className="text-gray-900 font-bold text-sm">Đặc điểm tính cách</span>
+              <span className="text-gray-900 font-bold text-sm">Personality Traits</span>
               <div className="flex flex-wrap gap-2 mt-2">
                 {traits.map((trait) => (
                   <span key={trait} className="bg-gray-100 rounded-full px-4 py-1 text-xs text-gray-700 font-medium">{trait}</span>
@@ -161,10 +161,10 @@ const PetDetailPage: React.FC = () => {
             </div>
             <div className="flex flex-col gap-3 mt-6">
               <button className="w-full bg-gradient-to-r from-[#F59F16] to-[#F5B349] text-white py-3 rounded-xl font-semibold hover:opacity-90 transition flex items-center justify-center text-base">
-                <AdoptIcon />Nhận nuôi {pet.name}
+                <AdoptIcon />Adopt {pet.name}
               </button>
               <button className="w-full border-2 border-[#F59F16] text-[#F59F16] py-3 rounded-xl font-semibold hover:bg-[#F59F16] hover:text-white transition flex items-center justify-center text-base">
-                <InfoIcon />Tìm hiểu quy trình
+                <InfoIcon />Learn About Process
               </button>
             </div>
           </div>
@@ -173,7 +173,7 @@ const PetDetailPage: React.FC = () => {
 
       {/* Other pets section */}
       <div className="max-w-6xl mx-auto w-full px-4 pb-12">
-        <h2 className="text-lg font-bold mb-4">Các thú cưng cùng khu vực</h2>
+        <h2 className="text-lg font-bold mb-4">Pets in the same area</h2>
         <div className="flex gap-4 overflow-x-auto pb-2">
           {otherPets.map((other) => (
             <Link key={other.id} to={`/pet/${other.id}`} style={{ textDecoration: 'none', color: 'inherit' }} className="min-w-[200px] max-w-[220px] flex-shrink-0">

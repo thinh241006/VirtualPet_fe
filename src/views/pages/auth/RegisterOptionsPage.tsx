@@ -16,7 +16,7 @@ const RegisterOptionsPage: React.FC = () => {
       <div className="w-full max-w-7xl text-center p-12 rounded-lg">
         {/* Title */}
         <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-12">
-          Đăng ký miễn phí cùng FureverHome
+          Sign up free with FureverHome
         </h1>
 
         {/* Options Container */}
@@ -27,7 +27,7 @@ const RegisterOptionsPage: React.FC = () => {
             className="bg-[#F59E0B] hover:bg-orange-600 text-white font-medium py-12 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg focus:ring-4 focus:ring-orange-300 focus:outline-none"
           >
             <div className="text-lg md:text-xl">
-              Bạn là người muốn nhận nuôi?
+              I want to adopt a pet
             </div>
           </button>
 
@@ -37,14 +37,14 @@ const RegisterOptionsPage: React.FC = () => {
             className="bg-[#F59E0B] hover:bg-orange-600 text-white font-medium py-12 px-6 rounded-lg transition-all duration-200 transform hover:scale-105 hover:shadow-lg focus:ring-4 focus:ring-orange-300 focus:outline-none"
           >
             <div className="text-lg md:text-xl">
-              Bạn là chủ trạm cứu hộ?
+              I'm a shelter manager
             </div>
           </button>
         </div>
 
         {/* Optional subtitle or additional info */}
         <p className="mt-8 text-gray-600 text-sm md:text-base">
-          Chọn loại tài khoản phù hợp để bắt đầu hành trình cứu hộ và nhận nuôi thú cưng
+          Choose the account type that suits you to start your pet rescue and adoption journey
         </p>
       </div>
     </div>

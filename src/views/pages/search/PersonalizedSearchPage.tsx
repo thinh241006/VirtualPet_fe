@@ -12,54 +12,54 @@ type Question = {
 const QUESTIONS: Question[] = [
   {
     key: "living",
-    label: "Tôi đang sống",
-    options: ["một mình", "cùng gia đình", "?"],
+    label: "I am living",
+    options: ["alone", "with family", "?"],
   },
   {
     key: "experience",
-    label: "Thú cưng tôi đã từng nuôi",
-    options: ["chó", "mèo", "loài khác", "không có"],
+    label: "I have previously owned",
+    options: ["dog", "cat", "other species", "none"],
   },
   {
     key: "time",
-    label: "Tôi có thể dành thời gian",
-    suffix: "cho thú cưng",
+    label: "I can dedicate",
+    suffix: "time per day for my pet",
     options: [
-      "dưới 1h/ngày",
-      "từ 1h đến 2h/ngày",
-      "trên 2h/ngày",
-      "chưa chắc chắn",
+      "less than 1 hour",
+      "1 to 2 hours",
+      "more than 2 hours",
+      "not sure yet",
     ],
   },
   {
     key: "budget",
-    label: "Tôi",
-    suffix: "chi phí chăm sóc thú cưng",
-    options: ["có đủ", "chưa có đủ", "chưa chắc chắn"],
+    label: "I",
+    suffix: "have enough budget for pet care costs",
+    options: ["have", "don't have", "not sure yet"],
   },
   {
     key: "preferSpecies",
-    label: "Tôi muốn nhận nuôi",
-    options: ["chó", "mèo", "các thú cưng khác"],
+    label: "I want to adopt",
+    options: ["a dog", "a cat", "other pets"],
   },
   {
     key: "temperament",
-    label: "Tôi mong thú cưng của mình",
+    label: "I want my pet to be",
     options: [
-      "năng động, hoạt bát",
-      "trầm tĩnh, điềm tĩnh",
-      "phù hợp với trẻ nhỏ",
-      "có thể ở một mình thời gian dài",
-      "nhu cầu chăm sóc thấp",
+      "energetic and playful",
+      "calm and quiet",
+      "good with children",
+      "able to be alone for long periods",
+      "low maintenance",
     ],
   },
   {
     key: "reason",
-    label: "Tôi nhận nuôi vì",
+    label: "I want to adopt because",
     options: [
-      "muốn có một người bạn đồng hành",
-      "muốn giáo dục chăm sóc thú cưng cho gia đình",
-      "muốn cứu mang thú cưng cần tổ ấm",
+      "I want a companion",
+      "I want to teach my family about pet care",
+      "I want to rescue a pet in need",
     ],
   },
 ];
@@ -117,7 +117,7 @@ const PersonalizedSearchPage: React.FC = () => {
             <span className="absolute right-4 top-3 text-sm text-gray-700">
               {stepIndex + 1}/{totalSteps}
             </span>
-            <div className="mb-5 text-sm text-gray-600">chọn một lựa chọn</div>
+            <div className="mb-5 text-sm text-gray-600">choose one option</div>
 
             <div className="flex flex-col gap-4">
               {currentQuestion.options.map((opt) => {
@@ -141,13 +141,13 @@ const PersonalizedSearchPage: React.FC = () => {
             <div className="mt-8 flex items-center justify-between">
               <Link to={Path.root.index} className="text-gray-700 hover:text-gray-900 inline-flex items-center gap-2">
                 <span>←</span>
-                <span>Quay lại màn hình chính</span>
+                <span>Back to Home</span>
               </Link>
               <button
                 onClick={handleSave}
                 className="bg-[#F5B349] hover:bg-[#f1a025] text-black font-semibold px-5 py-2 rounded-lg"
               >
-                {isLastStep ? "Hoàn tất" : "Lưu"}
+                {isLastStep ? "Finish" : "Save"}
               </button>
             </div>
           </div>
@@ -158,7 +158,7 @@ const PersonalizedSearchPage: React.FC = () => {
           <div className="mt-6 flex items-center justify-between">
             <Link to={Path.root.index} className="text-gray-700 hover:text-gray-900 inline-flex items-center gap-2">
               <span>←</span>
-              <span>Quay lại màn hình chính</span>
+              <span>Back to Home</span>
             </Link>
             <button
               onClick={() => {
@@ -167,7 +167,7 @@ const PersonalizedSearchPage: React.FC = () => {
               }}
               className="bg-[#F5B349] hover:bg-[#f1a025] text-black font-semibold px-5 py-2 rounded-lg"
             >
-              Thú cưng phù hợp
+              Suitable Pets
             </button>
           </div>
         )}

@@ -17,14 +17,14 @@ const NavigationLayout: React.FC = () => {
 						<Link to={Path.root.index}>
 							<img src={logo} alt="Furever Home Logo" className="h-9" />
 						</Link>
-						<div className="hidden md:flex items-center space-x-6">
-							<Link to={Path.search.personalized.index} className="text-gray-600 font-inter">
-								Cá nhân hóa tìm kiếm
-							</Link>
-							<a href="#" className="text-gray-600 font-inter">
-								Quy trình nhận nuôi
-							</a>
-						</div>
+					<div className="hidden md:flex items-center space-x-6">
+						<Link to={Path.search.personalized.index} className="text-gray-600 font-inter">
+							Personalized Search
+						</Link>
+						<a href="#" className="text-gray-600 font-inter">
+							Adoption Process
+						</a>
+					</div>
 					</div>
 
 					{/* Right: Auth */}
