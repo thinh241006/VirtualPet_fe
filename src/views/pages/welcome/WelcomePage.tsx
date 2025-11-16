@@ -6,7 +6,6 @@ import { pets } from "../../../components/PetMockData";
 import type { PetProps } from "../../../components/PetMockData";
 import { Link } from "react-router-dom";
 import { Path } from "../../../configs/path";
-import SearchBar from "@/components/SearchBar";
 
 const PetCard = ({ name, breed, age, location, image }: PetProps) => (
 	<div className="bg-white rounded-xl shadow">

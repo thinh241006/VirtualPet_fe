@@ -4,7 +4,6 @@ import logo from "../../assets/logo.svg";
 import { Path } from "../../configs/path";
 
 const NavigationLayout: React.FC = () => {
-  const [showSearchBox, setShowSearchBox] = useState(false);
 
 	return (
 		<div className="min-h-screen flex flex-col">

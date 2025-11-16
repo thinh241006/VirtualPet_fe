@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { FaPen, FaUser, FaHeart, FaFileAlt, FaCode } from "react-icons/fa";
+import { FaPen } from "react-icons/fa";
 import Footer from "@/components/Footer";
 import ProfileIcon from '@/assets/profile.svg';
-import HeartIcon from '@/assets/heart.svg';
 import DocumentIcon from '@/assets/document.svg';
 import PersonIcon from '@/assets/person.svg';
 import Heart2Icon from '@/assets/heart2.svg';
